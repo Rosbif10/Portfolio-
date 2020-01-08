@@ -1,0 +1,119 @@
+/* CSS Document */
+ nav {
+      background-color: white;
+	 margin-bottom: 4rem
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    li {
+      border-bottom: 1px solid lightsteelblue;
+    }
+
+    nav a {
+      display: inherit;
+      text-decoration: none;
+      color: black;
+      padding: 2rem;
+      line-height: 1rem;
+    }
+
+    nav a:hover {
+      color: black;
+      background-color: white;
+    }
+
+    a::first-letter {
+      text-transform: uppercase;
+    }
+
+    @media screen and (min-width: 360px) {
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      li {
+        display: inline-block;
+        border-bottom: none;
+		  
+      }
+		li:hover {
+			border-top: 3px solid black;
+		}
+    }
+
+    img {
+      width: 100%;
+    }
+  :root {
+      --ptop: 20vh;
+    }
+
+    html,
+    body {
+      margin-top: 5;
+      overflow: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      height: 100vh;
+      perspective: 1px;
+      transform-style: preserve-3d;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .parallax-wrapper {
+      width: 100vw;
+      height: 100vh;
+      padding-top: var(--ptop);
+      box-sizing: border-box;
+      transform-style: preserve-3d;
+      z-index: -1;
+    }
+
+    .parallax-wrapper::before {
+      content: "";
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      position: absolute;
+      transform: translateZ(-1px) scale(2);
+    }
+
+    .parallax-wrapper:nth-child(odd)::before {
+      background-image: url("https://i.pinimg.com/236x/46/40/85/464085187967c6884b7207f02a428e2e.jpg");
+      background-size: cover;
+    }
+
+    .parallax-wrapper:nth-child(even)::before {
+      background-image: url("https://i.pinimg.com/236x/55/5d/1b/555d1b195e277ca2d84c9d8b76fdb24c.jpg");
+      background-size: cover;
+    }
+
+    .regular-wrapper {
+      height: 100vh;
+      padding-top: var(--ptop);
+      background-image: url("https://i.pinimg.com/236x/46/40/85/464085187967c6884b7207f02a428e2e.jpg");
+      background-size: cover;
+      position: relative;
+    }
+
+    .content {
+      margin: 0 auto;
+      padding: 1em;
+      width: 50%;
+      background: rgba(222, 222, 222, 0.75);
+    }
